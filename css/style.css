@@ -173,6 +173,20 @@ h1 {
   }
 }
 
+/* "Articoli scientifici vs Articoli pubblicistici": più largo del solito,
+   per dare più spazio ai due grafici e renderli più proporzionati tra loro */
+.grafico-item--wide {
+  max-width: 960px;
+}
+
+/* "Riviste e Quotidiani": altezza limitata con scorrimento verticale,
+   così i due grafici affiancati restano della stessa altezza anche se
+   uno dei due è molto più lungo dell'altro */
+.chart-box--scroll {
+  max-height: 480px;
+  overflow-y: auto;
+}
+
 /* Grafici: box cliccabile per ingrandire */
 .chart-box {
   position: relative;
