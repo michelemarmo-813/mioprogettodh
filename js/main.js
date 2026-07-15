@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove("open");
   }
 
-  document.querySelectorAll(".chart-box").forEach((box) => {
-    box.addEventListener("click", () => {
-      const modal = document.getElementById(box.dataset.modal);
+  document.querySelectorAll(".chart-expand-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modal = document.getElementById(btn.dataset.modal);
       if (modal) openModal(modal);
     });
   });

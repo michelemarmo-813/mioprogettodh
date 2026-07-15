@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grafici - Il mio sito</title>
+  <title>Grafici - Introduzione alle Digital Humanities</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="logo">Il mio sito</a>
+      <a href="index.html" class="logo">Introduzione alle Digital Humanities</a>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -24,33 +24,42 @@
   <main class="container">
     <section>
       <h1>Grafici</h1>
-      <p>Clicca su un grafico per ingrandirlo.</p>
+      <p>Usa il pulsante "Ingrandisci" sotto ogni grafico per aprirlo a schermo intero.</p>
 
       <!--
         NOTA TECNICA: lo script di Flourish (embed.js) va incluso UNA SOLA VOLTA
         in tutta la pagina (si trova in fondo, prima della chiusura di </body>),
         anche se i grafici sono tanti. Includerlo più volte può rompere le
         interazioni (es. i click per aprire i dettagli nei grafici gerarchici).
+
+        Il click per l'ingrandimento è gestito solo dal pulsante
+        ".chart-expand-btn": il grafico stesso non ha listener di click,
+        così le interazioni interne di Flourish (es. drill-down) non vengono
+        mai intercettate.
       -->
 
       <div class="grafico-item">
         <h2>Interventi a stampa scritti da Umberto Eco dal 1952 al 1972</h2>
-        <div class="chart-box" data-modal="modal-eco">
+        <div class="chart-box">
           <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29696493"><noscript><img src="https://public.flourish.studio/visualisation/29696493/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
-          <span class="zoom-hint">🔍 Clicca per ingrandire</span>
         </div>
+        <button class="chart-expand-btn" type="button" data-modal="modal-eco">⤢ Ingrandisci</button>
       </div>
 
       <div class="grafico-item">
         <h2>Riviste e Quotidiani con cui ha collaborato dal 1952 al 1972</h2>
         <div class="grafico-row">
-          <div class="chart-box chart-box--scroll" data-modal="modal-riviste-1">
-            <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29683323"><noscript><img src="https://public.flourish.studio/visualisation/29683323/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
-            <span class="zoom-hint">🔍 Clicca per ingrandire</span>
+          <div class="chart-col">
+            <div class="chart-box chart-box--scroll">
+              <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29683323"><noscript><img src="https://public.flourish.studio/visualisation/29683323/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-riviste-1">⤢ Ingrandisci</button>
           </div>
-          <div class="chart-box chart-box--scroll" data-modal="modal-riviste-2">
-            <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29684532"><noscript><img src="https://public.flourish.studio/visualisation/29684532/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
-            <span class="zoom-hint">🔍 Clicca per ingrandire</span>
+          <div class="chart-col">
+            <div class="chart-box chart-box--scroll">
+              <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29684532"><noscript><img src="https://public.flourish.studio/visualisation/29684532/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-riviste-2">⤢ Ingrandisci</button>
           </div>
         </div>
       </div>
@@ -58,39 +67,43 @@
       <div class="grafico-item grafico-item--wide">
         <h2>Articoli scientifici vs Articoli pubblicistici</h2>
         <div class="grafico-row">
-          <div class="chart-box" data-modal="modal-articoli-1">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/29697056"><noscript><img src="https://public.flourish.studio/visualisation/29697056/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-            <span class="zoom-hint">🔍 Clicca per ingrandire</span>
+          <div class="chart-col">
+            <div class="chart-box">
+              <div class="flourish-embed flourish-chart" data-src="visualisation/29697056"><noscript><img src="https://public.flourish.studio/visualisation/29697056/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-articoli-1">⤢ Ingrandisci</button>
           </div>
-          <div class="chart-box" data-modal="modal-articoli-2">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/29697195"><noscript><img src="https://public.flourish.studio/visualisation/29697195/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-            <span class="zoom-hint">🔍 Clicca per ingrandire</span>
+          <div class="chart-col">
+            <div class="chart-box">
+              <div class="flourish-embed flourish-chart" data-src="visualisation/29697195"><noscript><img src="https://public.flourish.studio/visualisation/29697195/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-articoli-2">⤢ Ingrandisci</button>
           </div>
         </div>
       </div>
 
       <div class="grafico-item">
         <h2>Articoli pubblicati sulla Rivista di Estetica (1956 - 1958)</h2>
-        <div class="chart-box" data-modal="modal-estetica">
+        <div class="chart-box">
           <div class="flourish-embed flourish-chart" data-src="visualisation/29697618"><noscript><img src="https://public.flourish.studio/visualisation/29697618/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-          <span class="zoom-hint">🔍 Clicca per ingrandire</span>
         </div>
+        <button class="chart-expand-btn" type="button" data-modal="modal-estetica">⤢ Ingrandisci</button>
       </div>
 
       <div class="grafico-item">
         <h2>Articoli pubblicati su L'Espresso (1965 - 2016)</h2>
-        <div class="chart-box" data-modal="modal-espresso">
+        <div class="chart-box">
           <div class="flourish-embed flourish-chart" data-src="visualisation/29697571"><noscript><img src="https://public.flourish.studio/visualisation/29697571/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-          <span class="zoom-hint">🔍 Clicca per ingrandire</span>
         </div>
+        <button class="chart-expand-btn" type="button" data-modal="modal-espresso">⤢ Ingrandisci</button>
       </div>
 
       <div class="grafico-item">
         <h2>Articoli pubblicati su L'Espresso Colore (1967 - 1973)</h2>
-        <div class="chart-box" data-modal="modal-colore">
+        <div class="chart-box">
           <div class="flourish-embed flourish-chart" data-src="visualisation/29697506"><noscript><img src="https://public.flourish.studio/visualisation/29697506/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-          <span class="zoom-hint">🔍 Clicca per ingrandire</span>
         </div>
+        <button class="chart-expand-btn" type="button" data-modal="modal-colore">⤢ Ingrandisci</button>
       </div>
 
     </section>
@@ -98,7 +111,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Il mio sito</p>
+      <p>&copy; <span id="year"></span> Introduzione alle Digital Humanities</p>
     </div>
   </footer>
 
