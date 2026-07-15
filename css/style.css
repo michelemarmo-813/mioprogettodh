@@ -146,6 +146,27 @@ h1 {
   border: 0;
 }
 
+.grafico-item {
+  margin: 2.5rem 0;
+}
+
+.grafico-item h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.grafico-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .grafico-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--color-border);
