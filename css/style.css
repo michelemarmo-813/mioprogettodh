@@ -4,6 +4,9 @@
   --color-muted: #6b7280;
   --color-accent: #2563eb;
   --color-border: #e5e7eb;
+  --color-beige: #f5efe1;
+  --color-beige-border: #e3d5b8;
+  --color-beige-hover: #efe3c8;
   --max-width: 960px;
 }
 
@@ -81,31 +84,43 @@ h1 {
   max-width: 640px;
 }
 
+/* Home: i due pulsanti centrati sia in orizzontale che in verticale */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 220px);
+}
+
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
 }
 
 .card {
   display: block;
-  padding: 1.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
+  width: 260px;
+  padding: 2.25rem 1.75rem;
+  border: 1px solid var(--color-beige-border);
+  border-radius: 16px;
   text-decoration: none;
   color: var(--color-text);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  background: var(--color-beige);
+  text-align: center;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: var(--color-beige-hover);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
 .card h2 {
-  margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
 }
 
 .card p {
@@ -154,6 +169,7 @@ h1 {
 .grafico-item h2 {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .grafico-row {
@@ -179,11 +195,13 @@ h1 {
   max-width: 960px;
 }
 
-/* "Riviste e Quotidiani": altezza limitata con scorrimento verticale,
-   così i due grafici affiancati restano della stessa altezza anche se
-   uno dei due è molto più lungo dell'altro */
+/* "Riviste e Quotidiani": grafici un po' più grandi e più distanziati tra loro */
+.grafico-row--spaced {
+  gap: 2.5rem;
+}
+
 .chart-box--scroll {
-  max-height: 480px;
+  max-height: 620px;
   overflow-y: auto;
 }
 
