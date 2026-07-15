@@ -1,48 +1,32 @@
-# Il mio sito
+# Introduzione alle Digital Humanities
 
-Sito statico in HTML/CSS/JS con tre pagine:
+Sito realizzato per il corso "Introduzione alle Digital Humanities", con una presentazione video e alcune esercitazioni di data visualization sull'attività pubblicistica di Umberto Eco.
 
-- `index.html` — home
-- `video.html` — pagina video (placeholder, vedi istruzioni nel file)
-- `grafici.html` — pagina grafici Flourish (placeholder, vedi istruzioni nel file)
+🔗 Sito online: https://michelemarmo-813.github.io/mioprogettodh/
 
-## Come pubblicarlo su GitHub Pages
+## Contenuto
 
-Apri il Terminale, spostati in questa cartella e collega il repo GitHub che hai già creato.
+Il sito è composto da tre pagine:
 
-Se questa cartella **non è ancora un repo git**:
+- **Home** — pagina di ingresso con i link alle altre due sezioni
+- **Video** — video di presentazione: "Cosa sono per me le Digital Humanities"
+- **Grafici** — esercizi di data visualization sull'attività pubblicistica di Umberto Eco
 
-```bash
-cd "percorso/di/questa/cartella"
-git init
-git add .
-git commit -m "Primo commit: struttura sito"
-git branch -M main
-git remote add origin https://github.com/TUO-USERNAME/NOME-REPO.git
-git push -u origin main
-```
+## Tecnologie
 
-Se il repo è **già collegato** (hai clonato tu stesso il repo in questa cartella):
+- HTML, CSS, JavaScript
+- Grafici interattivi realizzati con [Flourish](https://flourish.studio)
+- Sito pubblicato con GitHub Pages
 
-```bash
-cd "percorso/di/questa/cartella"
-git add .
-git commit -m "Primo commit: struttura sito"
-git push
-```
+## Come aggiornare il sito
 
-## Attivare GitHub Pages
+1. Modifica i file (o fatteli modificare)
+2. Apri **GitHub Desktop**
+3. In "Changes" vedrai i file modificati: scrivi una breve descrizione e clicca **Commit to main**
+4. Clicca **Push origin** in alto
 
-1. Vai sulla pagina del repo su github.com
-2. Settings > Pages (menu a sinistra)
-3. In "Build and deployment" > "Source" scegli **Deploy from a branch**
-4. Branch: **main**, cartella: **/ (root)** > Save
-5. Dopo 1-2 minuti il sito sarà online su:
-   `https://TUO-USERNAME.github.io/NOME-REPO/`
+Il sito online si aggiorna da solo in 1-2 minuti dopo il push.
 
-## Prossimi passi
+## Autore
 
-- Registra il video e seguine le istruzioni in `video.html` per inserirlo
-- Crea i grafici su flourish.studio e incolla gli embed in `grafici.html`
-- Ogni volta che modifichi i file, ripeti `git add . && git commit -m "..." && git push`
-  per aggiornare il sito online (GitHub Pages si aggiorna da solo in 1-2 minuti)
+Michele Marmo
