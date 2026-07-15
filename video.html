@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video - Il mio sito</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Il mio sito</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="video.html" class="active">Video</a></li>
+          <li><a href="grafici.html">Grafici</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1>Video</h1>
+      <p>Qui sotto verrà mostrato il video una volta registrato.</p>
+
+      <!--
+        COME INSERIRE IL VIDEO UNA VOLTA REGISTRATO
+        =============================================
+
+        OPZIONE A — file video caricato nel repo (es. assets/video.mp4):
+        1) Crea una cartella "assets" e mettici dentro il file, es. assets/video.mp4
+        2) Sostituisci il div "video-placeholder" qui sotto con:
+
+           <video controls width="100%">
+             <source src="assets/video.mp4" type="video/mp4">
+             Il tuo browser non supporta il tag video.
+           </video>
+
+           Attenzione: GitHub ha un limite di 100MB per file (repo consigliato < 1GB
+           totale). Se il video è pesante, valuta l'opzione B.
+
+        OPZIONE B — video ospitato su YouTube/Vimeo (consigliata per file grandi):
+        1) Carica il video su YouTube (anche come "non in elenco") o Vimeo
+        2) Prendi il codice di embed dal pulsante "Condividi" > "Incorpora"
+        3) Sostituisci il div qui sotto con qualcosa tipo:
+
+           <div class="video-wrapper">
+             <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO"
+                     title="Video" frameborder="0" allowfullscreen></iframe>
+           </div>
+      -->
+      <div class="video-placeholder" id="video-placeholder">
+        <p>🎬 Video in arrivo</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Il mio sito</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

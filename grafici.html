@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafici - Il mio sito</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Il mio sito</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="grafici.html" class="active">Grafici</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h1>Grafici</h1>
+      <p>Qui sotto verranno mostrati i grafici realizzati con Flourish.</p>
+
+      <!--
+        COME INSERIRE UN GRAFICO FLOURISH
+        =============================================
+        1) Apri il tuo grafico su flourish.studio
+        2) Clicca su "Share" > "Embed code"
+        3) Copia lo snippet, che avrà questa forma:
+
+           <div class="flourish-embed flourish-chart" data-src="visualisation/NUMERO">
+             <script src="https://public.flourish.studio/resources/embed.js"></script>
+           </div>
+
+        4) Incollalo al posto (o accanto) del blocco "grafico-placeholder" qui sotto.
+        5) Puoi aggiungere più grafici semplicemente ripetendo il blocco div,
+           uno per ogni visualizzazione (basta un solo <script> embed.js in tutta la pagina).
+      -->
+
+      <div class="grafico-placeholder">
+        <p>📊 Grafico Flourish #1 in arrivo</p>
+      </div>
+
+      <div class="grafico-placeholder">
+        <p>📊 Grafico Flourish #2 in arrivo</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Il mio sito</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
