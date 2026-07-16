@@ -255,24 +255,42 @@ h1 {
    occupano esattamente lo stesso spazio ed i pulsanti "Ingrandisci" risultano
    sempre alla stessa identica riga */
 .chart-box--match-eco {
-  height: 520px;
+  height: 560px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Il secondo grafico ("Tipologia interventi") disegna un cerchio più
-   piccolo del primo a parità di spazio: lo ingrandiamo leggermente con
-   uno zoom via CSS, riducendo in senso inverso solo la scritta
-   "Made with Flourish..." perché non si ingrandisca anche lei */
-.chart-box--tipologia-zoom .flourish-embed {
-  transform: scale(1.22);
+/* Entrambi i grafici di questa coppia vengono ingranditi leggermente via
+   CSS (altrimenti risultano piccoli nel loro riquadro); la scritta
+   "Made with Flourish..." viene ridimensionata in senso inverso perché
+   resti piccola come tutte le altre */
+.chart-box--match-eco .flourish-embed {
+  transform: scale(1.1);
   transform-origin: center center;
 }
 
+.chart-box--match-eco .flourish-embed .flourish-credit {
+  transform: scale(0.909);
+  transform-origin: top right;
+}
+
+/* Il primo grafico (Eco) ha sopra di sé un piccolo menu a tendina ("All")
+   che il secondo grafico non ha: a parità di riquadro, questo sposta il
+   cerchio di Eco più in basso rispetto a quello di "Tipologia interventi".
+   Spostiamo quindi il secondo grafico più in basso (translateY, in aggiunta
+   allo zoom che lo ingrandisce quanto il primo) così i due cerchi risultano
+   alla stessa altezza. La scritta "Made with Flourish..." viene poi
+   riportata alla sua posizione naturale (translate in senso inverso),
+   altrimenti seguirebbe lo spostamento verso il basso del grafico e non
+   sarebbe più allineata con quella del primo grafico */
+.chart-box--tipologia-zoom .flourish-embed {
+  transform: scale(1.342) translateY(42px);
+}
+
 .chart-box--tipologia-zoom .flourish-embed .flourish-credit {
-  transform: scale(0.82);
+  transform: translate(-10px, -42px) scale(0.745);
   transform-origin: top right;
 }
 
@@ -289,7 +307,7 @@ h1 {
    comunque) e ingrandiamo leggermente le bolle con uno zoom via CSS, così
    risultano visivamente proporzionati invece che "piccoli" nel loro riquadro */
 .chart-box--riviste-1 {
-  height: 620px;
+  height: 580px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -297,15 +315,16 @@ h1 {
 }
 
 .chart-box--riviste-1 .flourish-embed {
-  transform: scale(1.5);
+  transform: scale(1.4);
   transform-origin: center center;
 }
 
 /* La scritta "Made with Flourish..." non deve ingrandirsi insieme al
-   grafico: la ridimensioniamo in senso inverso per farla restare piccola
-   come tutte le altre */
+   grafico: la ridimensioniamo in senso inverso e la spostiamo un po' a
+   sinistra (translateX), perché lo zoom la spingerebbe oltre il bordo
+   destro del riquadro */
 .chart-box--riviste-1 .flourish-embed .flourish-credit {
-  transform: scale(0.6667);
+  transform: translateX(-10px) scale(0.714);
   transform-origin: top right;
 }
 
@@ -412,6 +431,31 @@ h1 {
 
 .chart-modal-close:hover {
   background: #d1d5db;
+}
+
+/* Nella modale, il grafico Eco (primo) viene disegnato da Flourish enorme
+   (molto più della finestra), rendendolo poco leggibile e scomodo da usare:
+   lo rimpiccioliamo un po' per una dimensione più equilibrata, interattiva
+   e leggibile */
+#modal-eco .flourish-embed {
+  transform: scale(0.62);
+  transform-origin: top center;
+}
+
+/* Il grafico "Tipologia interventi" (secondo) disegna invece un cerchio
+   molto più piccolo del primo a parità di spazio: lo ingrandiamo così
+   risulta della stessa dimensione di quello di Eco qui sopra, una volta
+   ingranditi entrambi. La scritta "Made with Flourish..." va ridimensionata
+   e spostata a sinistra di conseguenza, perché lo zoom la spingerebbe fuori
+   dal bordo destro della modale */
+#modal-tipologia .flourish-embed {
+  transform: scale(1.426);
+  transform-origin: top center;
+}
+
+#modal-tipologia .flourish-embed .flourish-credit {
+  transform: translateX(-145px) scale(0.7013);
+  transform-origin: top right;
 }
 
 /* Footer */
