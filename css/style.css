@@ -167,24 +167,29 @@ h1 {
 }
 
 .grafico-item h2 {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 0.75rem;
   text-align: center;
 }
 
 .grafico-total {
+  width: 100%;
   text-align: center;
   color: var(--color-muted);
   font-size: 0.9rem;
-  margin: -0.25rem 0 1rem;
+  margin: 0 0 0.6rem;
 }
 
 .grafico-subtitle {
+  width: 100%;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  margin: 0 0 0.75rem;
 }
 
 .grafico-row {
@@ -196,6 +201,22 @@ h1 {
 .grafico-row > .chart-col {
   /* impedisce ai grafici di "scappare" dalla colonna e finire impilati */
   min-width: 0;
+  /* la colonna si allunga quanto il grafico più alto della coppia (comportamento
+     predefinito di grid); qui la trasformiamo in colonna flessibile in modo che
+     il pulsante "Ingrandisci" resti sempre allineato in basso, anche quando i
+     due grafici affiancati hanno altezze naturali diverse */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-col .chart-box {
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.chart-col > .chart-expand-btn {
+  margin-top: auto;
 }
 
 @media (max-width: 600px) {
@@ -213,6 +234,22 @@ h1 {
 /* "Riviste e Quotidiani": grafici un po' più grandi e più distanziati tra loro */
 .grafico-row--spaced {
   gap: 2.5rem;
+}
+
+/* Il primo grafico (a bolle) è naturalmente più compatto del secondo (a barre):
+   gli diamo qualche punto percentuale di larghezza in più così appaiono più
+   equilibrati fra loro */
+.grafico-row--riviste {
+  grid-template-columns: 11fr 9fr;
+}
+
+/* "Interventi a stampa" / "Tipologia interventi": due grafici di tipo diverso
+   con altezze naturali diverse — li forziamo alla stessa altezza fissa così
+   occupano esattamente lo stesso spazio ed i pulsanti "Ingrandisci" risultano
+   sempre alla stessa identica riga */
+.chart-box--match-eco {
+  height: 520px;
+  overflow-y: auto;
 }
 
 .chart-box--scroll {
