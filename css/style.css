@@ -435,10 +435,15 @@ h1 {
 
 /* Nella modale, il grafico Eco (primo) viene disegnato da Flourish enorme
    (molto più della finestra), rendendolo poco leggibile e scomodo da usare:
-   lo rimpiccioliamo un po' per una dimensione più equilibrata, interattiva
-   e leggibile */
+   lo rimpiccioliamo un po' per una dimensione più equilibrata e interattiva.
+   NOTA: rimpicciolire l'intero grafico rimpicciolisce in blocco anche le
+   scritte al suo interno (etichette, testo al passaggio del mouse), perché
+   il grafico di Flourish vive in un iframe che scaliamo come un blocco unico:
+   non possiamo ingrandire solo il testo separatamente dal cerchio. Il valore
+   0.78 (invece del precedente 0.62) è il compromesso scelto per rendere le
+   scritte più leggibili, accettando un cerchio leggermente più grande */
 #modal-eco .flourish-embed {
-  transform: scale(0.62);
+  transform: scale(0.78);
   transform-origin: top center;
 }
 
