@@ -195,6 +195,19 @@
     </div>
   </div>
 
+  <!--
+    Carichiamo i grafici Flourish "a mano" invece di lasciarli caricare
+    tutti automaticamente: disable_autoload dice a embed.js di non
+    disegnare subito ogni ".flourish-embed" che trova in pagina. main.js
+    poi chiama Flourish.loadEmbed() sui 7 grafici visibili appena la
+    pagina è pronta, e sui 7 grafici delle modali "Ingrandisci" solo al
+    primo click su ciascun pulsante. Così la pagina non scarica e
+    disegna 14 grafici fin da subito (il doppio di quelli che si vedono),
+    ma solo quelli davvero mostrati, il che velocizza il caricamento.
+  -->
+  <script>
+    window.Flourish = { disable_autoload: true };
+  </script>
   <script src="js/main.js"></script>
   <script src="https://public.flourish.studio/resources/embed.js"></script>
 </body>
