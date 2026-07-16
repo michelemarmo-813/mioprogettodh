@@ -256,7 +256,24 @@ h1 {
    sempre alla stessa identica riga */
 .chart-box--match-eco {
   height: 520px;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Il secondo grafico ("Tipologia interventi") disegna un cerchio più
+   piccolo del primo a parità di spazio: lo ingrandiamo leggermente con
+   uno zoom via CSS, riducendo in senso inverso solo la scritta
+   "Made with Flourish..." perché non si ingrandisca anche lei */
+.chart-box--tipologia-zoom .flourish-embed {
+  transform: scale(1.22);
+  transform-origin: center center;
+}
+
+.chart-box--tipologia-zoom .flourish-embed .flourish-credit {
+  transform: scale(0.82);
+  transform-origin: top right;
 }
 
 /* "Articoli scientifici vs pubblicistici": stessa logica, altezza fissa
@@ -284,9 +301,30 @@ h1 {
   transform-origin: center center;
 }
 
+/* La scritta "Made with Flourish..." non deve ingrandirsi insieme al
+   grafico: la ridimensioniamo in senso inverso per farla restare piccola
+   come tutte le altre */
+.chart-box--riviste-1 .flourish-embed .flourish-credit {
+  transform: scale(0.6667);
+  transform-origin: top right;
+}
+
 .chart-box--riviste-2 {
   height: 620px;
   overflow-y: auto;
+}
+
+/* Questo grafico (elenco a barre, molto lungo) mostra la scritta
+   "Made with Flourish..." solo in fondo a tutto il contenuto: essendo il
+   box scrollabile, di norma resterebbe invisibile finché non si scorre
+   fino in fondo. La fissiamo invece in basso nel riquadro visibile (come
+   una piccola barra sempre in vista), così appare piccola fin da subito
+   come negli altri grafici */
+.chart-box--riviste-2 .flourish-credit {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  z-index: 1;
 }
 
 /* Grafici: il box non ha più alcun comportamento di click — l'ingrandimento
