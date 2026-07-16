@@ -36,17 +36,24 @@
         ".chart-expand-btn": il grafico stesso non ha listener di click,
         così le interazioni interne di Flourish (es. drill-down) non vengono
         mai intercettate.
+
+        Nelle coppie di grafici affiancati, ogni ".chart-box" ha un'altezza
+        FISSA (non "max-height") tramite una classe dedicata (es.
+        ".chart-box--match-eco"): questo garantisce che i due grafici
+        occupino sempre esattamente lo stesso spazio e che i pulsanti
+        "Ingrandisci" restino allineati, indipendentemente dai tempi di
+        caricamento di Flourish.
       -->
 
       <div class="grafico-item grafico-item--wide">
         <h2>Interventi a stampa scritti da Umberto Eco dal 1952 al 1972</h2>
+        <p class="grafico-total">Totale: 840 articoli</p>
         <div class="grafico-row">
           <div class="chart-col">
             <h3 class="grafico-subtitle">Articoli ripubblicati in volume vs Articoli non ripubblicati</h3>
             <div class="chart-box chart-box--match-eco">
               <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29696493"><noscript><img src="https://public.flourish.studio/visualisation/29696493/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
             </div>
-            <p class="grafico-total">Totale: 840 articoli</p>
             <button class="chart-expand-btn" type="button" data-modal="modal-eco">⤢ Ingrandisci</button>
           </div>
           <div class="chart-col">
@@ -63,13 +70,13 @@
         <h2>Riviste e Quotidiani con cui ha collaborato dal 1952 al 1972</h2>
         <div class="grafico-row grafico-row--spaced grafico-row--riviste">
           <div class="chart-col">
-            <div class="chart-box chart-box--scroll">
+            <div class="chart-box chart-box--riviste-1">
               <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29683323"><noscript><img src="https://public.flourish.studio/visualisation/29683323/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
             </div>
             <button class="chart-expand-btn" type="button" data-modal="modal-riviste-1">⤢ Ingrandisci</button>
           </div>
           <div class="chart-col">
-            <div class="chart-box chart-box--scroll">
+            <div class="chart-box chart-box--riviste-2">
               <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29684532"><noscript><img src="https://public.flourish.studio/visualisation/29684532/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
             </div>
             <button class="chart-expand-btn" type="button" data-modal="modal-riviste-2">⤢ Ingrandisci</button>
@@ -81,13 +88,13 @@
         <h2>Articoli scientifici vs Articoli pubblicistici</h2>
         <div class="grafico-row">
           <div class="chart-col">
-            <div class="chart-box">
+            <div class="chart-box chart-box--match-articoli">
               <div class="flourish-embed flourish-chart" data-src="visualisation/29697056"><noscript><img src="https://public.flourish.studio/visualisation/29697056/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
             </div>
             <button class="chart-expand-btn" type="button" data-modal="modal-articoli-1">⤢ Ingrandisci</button>
           </div>
           <div class="chart-col">
-            <div class="chart-box">
+            <div class="chart-box chart-box--match-articoli">
               <div class="flourish-embed flourish-chart" data-src="visualisation/29697195"><noscript><img src="https://public.flourish.studio/visualisation/29697195/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
             </div>
             <button class="chart-expand-btn" type="button" data-modal="modal-articoli-2">⤢ Ingrandisci</button>
@@ -153,7 +160,7 @@
     </div>
   </div>
 
-  <div class="chart-modal" id="modal-riviste-2">
+  <div class="chart-modal" id="modal-riviste-2" data-no-autofit="true">
     <div class="chart-modal-inner">
       <button class="chart-modal-close" aria-label="Chiudi">✕</button>
       <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29684532"><noscript><img src="https://public.flourish.studio/visualisation/29684532/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>

@@ -163,7 +163,7 @@ h1 {
 
 .grafico-item {
   max-width: 800px;
-  margin: 2.5rem auto;
+  margin: 5rem auto;
 }
 
 .grafico-item h2 {
@@ -178,11 +178,18 @@ h1 {
   text-align: center;
   color: var(--color-muted);
   font-size: 0.9rem;
-  margin: 0 0 0.6rem;
+  margin: 0 0 1.5rem;
 }
 
 .grafico-subtitle {
   width: 100%;
+  /* altezza fissa per due righe: così, se un sottotitolo è più lungo e va
+     a capo mentre quello a fianco sta su una riga sola, i due grafici
+     iniziano comunque tutti alla stessa identica altezza */
+  min-height: 2.6rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
@@ -252,8 +259,33 @@ h1 {
   overflow-y: auto;
 }
 
-.chart-box--scroll {
-  max-height: 620px;
+/* "Articoli scientifici vs pubblicistici": stessa logica, altezza fissa
+   condivisa dai due grafici della coppia */
+.chart-box--match-articoli {
+  height: 500px;
+  overflow-y: auto;
+}
+
+/* "Riviste e Quotidiani": il primo grafico (a bolle) è per natura più
+   compatto del secondo (a barre, molto lungo). Diamo a entrambi la stessa
+   altezza fissa (620px, la stessa a cui il grafico a barre arriva
+   comunque) e ingrandiamo leggermente le bolle con uno zoom via CSS, così
+   risultano visivamente proporzionati invece che "piccoli" nel loro riquadro */
+.chart-box--riviste-1 {
+  height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-box--riviste-1 .flourish-embed {
+  transform: scale(1.15);
+  transform-origin: center center;
+}
+
+.chart-box--riviste-2 {
+  height: 620px;
   overflow-y: auto;
 }
 
@@ -286,9 +318,16 @@ h1 {
   border-color: #d8c7a3;
 }
 
-/* Modale di ingrandimento */
+/* Modale di ingrandimento
+   NOTA IMPORTANTE: la modale resta SEMPRE "display: flex" (mai "display: none").
+   Viene nascosta solo con visibility/opacity. Questo perché Flourish misura la
+   larghezza disponibile del grafico quando la pagina si carica: se il
+   contenitore fosse "display: none" (larghezza zero), il grafico dentro la
+   modale risulterebbe vuoto/non disegnato anche dopo averla aperta. Con
+   "visibility: hidden" il contenitore ha comunque una larghezza reale fin
+   dall'inizio, quindi Flourish lo disegna correttamente da subito. */
 .chart-modal {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: rgba(15, 15, 15, 0.8);
@@ -296,10 +335,16 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
 }
 
 .chart-modal.open {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .chart-modal-inner {
