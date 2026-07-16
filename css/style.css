@@ -267,12 +267,12 @@ h1 {
    "Made with Flourish..." viene ridimensionata in senso inverso perché
    resti piccola come tutte le altre */
 .chart-box--match-eco .flourish-embed {
-  transform: scale(1.1);
+  transform: scale(1.298);
   transform-origin: center center;
 }
 
 .chart-box--match-eco .flourish-embed .flourish-credit {
-  transform: scale(0.909);
+  transform: scale(0.7704);
   transform-origin: top right;
 }
 
@@ -286,11 +286,11 @@ h1 {
    altrimenti seguirebbe lo spostamento verso il basso del grafico e non
    sarebbe più allineata con quella del primo grafico */
 .chart-box--tipologia-zoom .flourish-embed {
-  transform: scale(1.342) translateY(42px);
+  transform: scale(1.475) translateY(27px);
 }
 
 .chart-box--tipologia-zoom .flourish-embed .flourish-credit {
-  transform: translate(-10px, -42px) scale(0.745);
+  transform: translate(-10px, -19px) scale(0.678);
   transform-origin: top right;
 }
 
