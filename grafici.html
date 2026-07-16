@@ -38,12 +38,25 @@
         mai intercettate.
       -->
 
-      <div class="grafico-item">
+      <div class="grafico-item grafico-item--wide">
         <h2>Interventi a stampa scritti da Umberto Eco dal 1952 al 1972</h2>
-        <div class="chart-box">
-          <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29696493"><noscript><img src="https://public.flourish.studio/visualisation/29696493/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+        <div class="grafico-row">
+          <div class="chart-col">
+            <h3 class="grafico-subtitle">Articoli ripubblicati in volume vs Articoli non ripubblicati</h3>
+            <p class="grafico-total">Totale: 840 articoli</p>
+            <div class="chart-box">
+              <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29696493"><noscript><img src="https://public.flourish.studio/visualisation/29696493/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-eco">⤢ Ingrandisci</button>
+          </div>
+          <div class="chart-col">
+            <h3 class="grafico-subtitle">Tipologia interventi</h3>
+            <div class="chart-box">
+              <div class="flourish-embed flourish-chart" data-src="visualisation/29707189"><noscript><img src="https://public.flourish.studio/visualisation/29707189/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+            </div>
+            <button class="chart-expand-btn" type="button" data-modal="modal-tipologia">⤢ Ingrandisci</button>
+          </div>
         </div>
-        <button class="chart-expand-btn" type="button" data-modal="modal-eco">⤢ Ingrandisci</button>
       </div>
 
       <div class="grafico-item grafico-item--wide">
@@ -123,6 +136,13 @@
     <div class="chart-modal-inner">
       <button class="chart-modal-close" aria-label="Chiudi">✕</button>
       <div class="flourish-embed flourish-hierarchy" data-src="visualisation/29696493"><noscript><img src="https://public.flourish.studio/visualisation/29696493/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+    </div>
+  </div>
+
+  <div class="chart-modal" id="modal-tipologia">
+    <div class="chart-modal-inner">
+      <button class="chart-modal-close" aria-label="Chiudi">✕</button>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/29707189"><noscript><img src="https://public.flourish.studio/visualisation/29707189/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
     </div>
   </div>
 

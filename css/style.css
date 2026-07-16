@@ -172,6 +172,21 @@ h1 {
   text-align: center;
 }
 
+.grafico-total {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 1rem;
+}
+
+.grafico-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.6rem;
+}
+
 .grafico-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
