@@ -178,7 +178,7 @@ h1 {
   text-align: center;
   color: var(--color-muted);
   font-size: 0.9rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 2.75rem;
 }
 
 .grafico-subtitle {
@@ -280,7 +280,7 @@ h1 {
 }
 
 .chart-box--riviste-1 .flourish-embed {
-  transform: scale(1.15);
+  transform: scale(1.5);
   transform-origin: center center;
 }
 

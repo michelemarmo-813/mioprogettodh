@@ -8,44 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Grafici: apertura/chiusura della finestra di ingrandimento
 document.addEventListener("DOMContentLoaded", () => {
-  // Rimpicciolisce (se serve) il grafico ingrandito perché stia sempre
-  // interamente a schermo, senza dover scorrere. Il grafico a barre
-  // "Riviste e Quotidiani" (modal-riviste-2, molto lungo) è escluso di
-  // proposito: per quello la barra di scorrimento resta, come richiesto.
-  function fitModalChart(modal) {
-    if (modal.dataset.noAutofit === "true") return;
-    if (!modal.classList.contains("open")) return;
-
-    const embed = modal.querySelector(".flourish-embed");
-    if (!embed) return;
-
-    const contentHeight = embed.getBoundingClientRect().height;
-    const available = window.innerHeight * 0.85 - 70; // margine per padding e pulsante chiudi
-
-    if (contentHeight > available && available > 150) {
-      const scale = available / contentHeight;
-      embed.style.transformOrigin = "top center";
-      embed.style.transform = `scale(${scale})`;
-      // collassa lo spazio vuoto lasciato dallo scale, che non riduce
-      // da solo l'ingombro dell'elemento nel flusso della pagina
-      embed.style.marginBottom = `${-(contentHeight - contentHeight * scale)}px`;
-    }
-  }
-
   function openModal(modal) {
-    const embed = modal.querySelector(".flourish-embed");
-    if (embed) {
-      embed.style.transform = "";
-      embed.style.marginBottom = "";
-    }
-
     modal.classList.add("open");
     // forza Flourish a ricalcolare le dimensioni ora che il grafico è visibile
     requestAnimationFrame(() => {
       window.dispatchEvent(new Event("resize"));
     });
-    // aspetta che Flourish finisca di disegnare il grafico prima di misurarlo
-    setTimeout(() => fitModalChart(modal), 700);
   }
 
   function closeModal(modal) {
