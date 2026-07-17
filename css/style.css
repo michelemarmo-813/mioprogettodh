@@ -358,6 +358,19 @@ h1 {
   overflow: hidden;
 }
 
+/* I tre grafici "singoli" (Estetica, Espresso, Colore) sono gli unici a non
+   avere un'altezza riservata via CSS: il loro .chart-box parte vuoto e
+   scatta improvvisamente alla sua altezza finale quando Flourish finisce di
+   disegnare il grafico, causando un salto visibile nella pagina durante il
+   caricamento. Riserviamo uno spazio minimo fin da subito (come già
+   avviene per le coppie di grafici sopra) per eliminare questo scatto;
+   overflow-y:auto invece di hidden evita che un grafico più alto del
+   previsto venga tagliato, mostrando invece una barra di scorrimento */
+.grafico-item > .chart-box {
+  min-height: 500px;
+  overflow-y: auto;
+}
+
 .chart-expand-btn {
   display: inline-flex;
   align-items: center;
