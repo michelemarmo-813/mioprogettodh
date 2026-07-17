@@ -15,20 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadFlourish(el) {
   if (el.dataset.flourishLoaded) return;
   if (window.Flourish && typeof window.Flourish.loadEmbed === "function") {
-    // dissolvenza invece di "scatto": Flourish disegna il grafico in due
-    // passaggi (una prima bozza veloce, poi il ridisegno finale quando dati
-    // e font sono pronti) — nascondiamo il grafico per una frazione di
-    // secondo e lo facciamo riapparire con una piccola transizione, così
-    // l'eventuale aggiustamento interno risulta meno brusco da vedere.
-    // Se JavaScript è disabilitato questo codice non viene mai eseguito,
-    // quindi l'immagine di fallback nel <noscript> resta sempre visibile.
-    el.style.opacity = "0";
-    el.style.transition = "opacity 0.35s ease";
     window.Flourish.loadEmbed(el);
     el.dataset.flourishLoaded = "true";
-    window.setTimeout(() => {
-      el.style.opacity = "1";
-    }, 300);
   }
 }
 
