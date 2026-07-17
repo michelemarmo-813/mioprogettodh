@@ -445,11 +445,12 @@ h1 {
    naviga tra le gerarchie), perché il grafico di Flourish vive in un iframe
    che scaliamo come un blocco unico: non possiamo ingrandire solo il testo
    separatamente dal cerchio. Il valore 0.95 (aumentato da 0.78) privilegia
-   la leggibilità dei caratteri durante la navigazione: il cerchio risulta
-   più grande e la modale (che scorre con overflow:auto) potrebbe richiedere
-   più scroll, ma il testo resta leggibile */
+   la leggibilità dei caratteri durante la navigazione, ma senza esagerare
+   con l'ingombro del cerchio nella modale: 0.86 è una via di mezzo tra il
+   precedente 0.78 (font un po' piccolo) e un valore vicino a 1 (cerchio
+   troppo grande e scomodo) */
 #modal-eco .flourish-embed {
-  transform: scale(0.95);
+  transform: scale(0.86);
   transform-origin: top center;
 }
 
